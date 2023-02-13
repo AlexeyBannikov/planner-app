@@ -1,0 +1,68 @@
+.backlog {
+	padding: 5px;
+	background-color: #DDDDDD;
+	width: 20%;
+	font-size: 18px;
+}
+
+.backlog__header {
+	font-size: 18px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.backlog__header input {
+	width: 100%;
+	padding: 5px 10px;
+	border: none;
+	margin-bottom: 10px;
+	font-size: 16px;
+}
+
+.backlog__tasks {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.backlog__task {
+	background-color: #c1c1c1;
+	padding: 10px;
+	border-radius: 5px;
+	cursor: move;
+	word-wrap: break-word;
+}
+
+.backlog__task:hover::after {
+	content: attr(data);
+	display: block;
+	position: absolute;
+	background-color: #fff;
+	border: 1px solid black;
+	padding: 5px 10px;
+}
+
+.hide {
+	display: none;
+}
+
+.active {
+	opacity: 0.5;
+}
+
+.remove-hint:hover::after {
+	display: none;
+}
+
+@media (max-width: 1156px) {
+	.backlog {
+		font-size: 16px;
+	}
+}
+
+@media (max-width: 768px) {
+	.backlog {
+		display: none;
+	}
+}
