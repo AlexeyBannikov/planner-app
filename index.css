@@ -34,6 +34,11 @@ button {
 }
 
 
+.error {
+	font-size: 24px;
+	text-align: center;
+}
+
 .loader {
 	margin: 0 auto;
 	border: 6px solid #dddddd;

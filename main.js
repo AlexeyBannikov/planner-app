@@ -132,12 +132,19 @@ const rerender = () => {
 const init = async () => {
   const wrapper = document.querySelector('.wrapper');
   const loader = document.querySelector('.loader');
-
+  const error = document.querySelector('.error');
   wrapper.classList.add('hide');
-  await fetchUsers();
-  await fetchTasks();
-  wrapper.classList.remove('hide');
-  loader.classList.add('hide');
+
+  try {
+    await fetchUsers();
+    await fetchTasks();
+    wrapper.classList.remove('hide');
+  } catch (err) {
+    error.classList.remove('hide');
+    error.innerText = err.message;
+  } finally {
+    loader.classList.add('hide');
+  }
 
   renderAll(usersData, tasksData);
 };
