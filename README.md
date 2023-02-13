@@ -1,3 +1,2 @@
 # Native JS planner app
-
-Test task for ELMA
+Deploy: https://alexeybannikov.github.io/planner-app/
