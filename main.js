@@ -101,16 +101,14 @@ const dragAndDrop = () => {
     }
 
     usersWithTask.push({
-      name: `${e.target.getAttribute('firstName')}`,
-      surname: `${e.target.getAttribute('surname')}`,
-      task: `${activeElement.getAttribute('task')}`,
-      planStartDate: `${
-        e.target.classList.contains('planner__user')
-          ? planStartDate
-          : `${e.target.getAttribute('data')}`
-      }`,
-      creationDate: `${activeElement.getAttribute('creationDate')}`,
-      planEndDate: `${activeElement.getAttribute('planEndDate')}`,
+      name: e.target.getAttribute('firstName'),
+      surname: e.target.getAttribute('surname'),
+      task: activeElement.getAttribute('task'),
+      planStartDate: e.target.classList.contains('planner__user')
+        ? planStartDate
+        : e.target.getAttribute('data'),
+      creationDate: activeElement.getAttribute('creationDate'),
+      planEndDate: activeElement.getAttribute('planEndDate'),
       id: Number(e.target.getAttribute('id')),
     });
 
