@@ -133,7 +133,6 @@ const init = async () => {
   const wrapper = document.querySelector('.wrapper');
   const loader = document.querySelector('.loader');
   const error = document.querySelector('.error');
-  wrapper.classList.add('hide');
 
   try {
     await fetchUsers();
