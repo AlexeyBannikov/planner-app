@@ -34,18 +34,18 @@ const renderUsers = (users, tasks) => {
 
     div.classList.add('planner__grid');
     userName.classList.add('planner__user');
-    userName.setAttribute('id', `${user.id}`);
-    userName.setAttribute('surname', `${user.surname}`);
-    userName.setAttribute('firstName', `${user.firstName}`);
+    userName.setAttribute('id', user.id);
+    userName.setAttribute('surname', user.surname);
+    userName.setAttribute('firstName', user.firstName);
     userName.innerText = `${user.surname} ${user.firstName}`;
     div.append(userName);
 
     for (let i = 0; i < 7; i++) {
       const day = document.createElement('ul');
       day.classList.add('planner__day');
-      day.setAttribute('id', `${user.id}`);
-      day.setAttribute('surname', `${user.surname}`);
-      day.setAttribute('firstName', `${user.firstName}`);
+      day.setAttribute('id', user.id);
+      day.setAttribute('surname', user.surname);
+      day.setAttribute('firstName', user.firstName);
       day.setAttribute(
         'data',
         `${currentWeek[i].year}-${currentWeek[i].month}-${currentWeek[i].day}`,
@@ -55,7 +55,7 @@ const renderUsers = (users, tasks) => {
         if (userTasks[j].planStartDate === day.getAttribute('data')) {
           const dayTask = document.createElement('li');
           dayTask.classList.add('planner__task');
-          dayTask.innerText = `${userTasks[j].task}`;
+          dayTask.innerText = userTasks[j].task;
           day.append(dayTask);
         }
       }
